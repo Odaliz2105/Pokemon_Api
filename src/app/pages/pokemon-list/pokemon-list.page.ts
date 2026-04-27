@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
@@ -6,28 +6,31 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   templateUrl: './pokemon-list.page.html',
   styleUrls: ['./pokemon-list.page.scss'],
 })
-export class PokemonListPage implements OnInit {
-  pokemons: any[] = [];
+export class PokemonListPage {
+  pokemonName: string = "";
+  pokemon : any;
   loading = false;
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(private pokemonService: PokemonService){}
 
-  ngOnInit() {
-    this.fetchPokemons();
-    
-  }
+  searchPokemon(){
+    if (!this.pokemonName) return;
 
-  fetchPokemons() {
     this.loading = true;
-    this.pokemonService.getPokemons(50).subscribe({
-      next: (response) => {
-        this.pokemons = response.results;
+
+    this.pokemonService
+  .getPokemonDetails(this.pokemonName.toLowerCase())
+
+    .subscribe({
+      next: (data:any) => {
+        this.pokemon = data;
         this.loading = false;
       },
-      error: (error) => {
-        console.error('Error fetching Pokémon:', error);
+
+      error: () =>{
+        alert('Pokémon no encontrado')
         this.loading = false;
-      },
+      }
     });
   }
 }
