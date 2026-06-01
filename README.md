@@ -324,14 +324,6 @@ Dentro de la ruta ```android/app/src/main/res/values/```
 | <img width="200" src="https://github.com/user-attachments/assets/ab98882a-27a7-46df-bafa-26a4783ab341" /> | <img width="200" src="https://github.com/user-attachments/assets/6c1c0642-41a7-4e87-ab79-da4323b733c0" />|
 
 
-### App en ejecución en celular
-
-
-https://github.com/user-attachments/assets/a970699a-0a34-4d29-9fc7-34faa81abb78
-
-
----
-
 ## Resultados
 
 - Se consumió correctamente la API de Pokémon.
