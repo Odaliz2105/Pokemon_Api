@@ -15,7 +15,7 @@ Aplicación móvil desarrollada con Ionic y Angular que consume la API de Pokém
 
 ## Autora
 
-- Nayely Ayol
+-Odaliz Balseca Valencia
 
 ---
 
